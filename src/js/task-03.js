@@ -38,3 +38,6 @@ const getCardImages = images.map(imagesCard)
 console.log(getCardImages);
 
 listEl.append(...getCardImages);
+
+
+
