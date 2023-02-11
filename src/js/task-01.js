@@ -1,33 +1,8 @@
-const categoriesLength = document.querySelectorAll("#categories .item");
+const categories = document.querySelectorAll(".item");
 
-console.log(`Number of categories: ${categoriesLength.length}`);
+console.log(`Number of categories: ${categories.length}\n\n`);
 
-const titleCategory = document.querySelectorAll("h2");
-
-console.dir(titleCategory);
-
-console.log(titleCategory[0].textContent);
-
-console.log(titleCategory[1].textContent);
-
-console.log(titleCategory[2].textContent);
-
-
-const categories = document.querySelectorAll(".item ul li");
-
-console.log(categories);
-
-const itemsArr = [...categoriesLength];
-
-console.log(itemsArr);
-
-let a = [];
-
-itemsArr.forEach(elem => {
-    a.push(elem);
-    console.log(a.length);
+categories.forEach((el) => {
+    console.log(`Number of categories: ${el.firstElementChild.textContent}`);
+    console.log(`Number of categories: ${el.lastElementChild.children.length}\n\n`);
 });
-
-
-
-
