@@ -7,8 +7,6 @@ const btnCreate = document.querySelector("[data-create]");
 const btnDestroy = document.querySelector("[data-destroy]");
 const boxesEl = document.getElementById('boxes');
 
-console.log(input.max);
-
 const createBoxes = () =>{
   let size = 20;
   const boxArr =[];
@@ -20,14 +18,14 @@ const createBoxes = () =>{
       boxArr.push(`<div class ='elem' style='height: ${size}px; background-color: ${getRandomHexColor()}; width: ${size}px'></div>`);
     }
   
-    boxesEl.insertAdjacentHTML("beforebegin", boxArr.join(''));
+    boxesEl.insertAdjacentHTML("beforeend", boxArr.join(''));
   }else {
-    boxesEl.insertAdjacentHTML("beforebegin", error);
+    boxesEl.insertAdjacentHTML("beforeend", error);
   }
 }
 
 const destroyBoxes = () => {
-  location.reload();
+  boxesEl.innerHTML = "";
 }
 
 btnCreate.addEventListener('click', createBoxes);

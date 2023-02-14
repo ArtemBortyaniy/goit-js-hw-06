@@ -18,26 +18,18 @@ const listEl = document.querySelector(".gallery");
 listEl.style.display = "flex";
 listEl.style.justifyContent = "center";
 listEl.style.gap = "40px";
-
-console.log(listEl);
+listEl.style.listStyle = "none";
 
 const imagesCard = ({url, alt}) => {
-
-  const imgEl = document.createElement("img");
-  imgEl.setAttribute("src", url);
-  imgEl.setAttribute("alt", alt);
-
-  imgEl.style.width = "350px";
-  imgEl.style.height = "200px";
-
-  return imgEl;
+  let img;
+  return img =`<li><img src=${url} alt=${alt} style= 'width: 350px; height: 200px'/></li>`;
 }
 
-const getCardImages = images.map(imagesCard)
+const getCardImages = images.map(imagesCard).join('')
+listEl.insertAdjacentHTML('beforeend', getCardImages);
 
-console.log(getCardImages);
 
-listEl.append(...getCardImages);
+
 
 
 
